@@ -1847,7 +1847,7 @@ def printLogo():
     print(" \x1b[36mVersion "+jwttoolvers+"          \x1b[0m      \\______|             \x1b[36m@ticarpi\x1b[0m      ")
     print()
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(epilog="If you don't have a token, try this one:\neyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbiI6InRpY2FycGkifQ.bsSwqj2c2uI9n7-ajmi3ixVGhPUiY7jO9SUn9dm15Po", formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("jwt", nargs='?', type=str,
                         help="the JWT to tinker with (no need to specify if in header/cookies)")
@@ -2216,8 +2216,11 @@ if __name__ == '__main__':
                 exit(1)
     if args.mode:
         if not config['argvals']['targeturl'] and not args.bare:
-            cprintc("No target secified (-t), cannot scan offline.", "red")
+            cprintc("No target specified (-t), cannot scan offline.", "red")
             exit(1)
         runScanning()
     runActions()
     exit(1)
+
+if __name__ == '__main__':
+    main()
