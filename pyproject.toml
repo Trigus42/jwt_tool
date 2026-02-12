@@ -14,3 +14,8 @@ dependencies = [
 
 [project.scripts]
 jwt-tool = "jwt_tool:main"
+
+[project.optional-dependencies]
+win-colour = [
+  "colorama>=0.4.6",
+]

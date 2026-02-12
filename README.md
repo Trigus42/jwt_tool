@@ -88,12 +88,18 @@ On first run the tool will generate a config file, some utility files, logfile, 
 ***Review the other options in the config file to customise your experience.***
 
 ### Colour bug in Windows
-To fix broken colours in Windows cmd/Powershell: uncomment the below two lines in `jwt_tool.py` (remove the "# " from the beginning of each line)  
-You will also need to install colorama: `python3 -m pip install colorama`
+If colours are not displaying correctly in Windows cmd/PowerShell, install the optional dependency group. The script will auto-enable colour support when `colorama` is present.
+
+Using uv:
 ```
-# import colorama
-# colorama.init()
+uv tool install .[win-colour]
 ```
+
+Using pip:
+```
+python3 -m pip install .[win-colour]
+```
+
 ---
 
 ## Usage

@@ -50,9 +50,12 @@ except:
     print("On most Linux systems you can run the following command to install:")
     print("python3 -m pip install requests\n")
     exit(1)
-# To fix broken colours in Windows cmd/Powershell: uncomment the below two lines. You will need to install colorama: 'python3 -m pip install colorama'
-# import colorama
-# colorama.init()
+# Attempt to enable ANSI colours on Windows if colorama is available
+try:
+    import colorama
+    colorama.init()
+except Exception:
+    pass
 
 # CONSTANTS
 DEFAULT_RATE_LIMIT  = 999999999
