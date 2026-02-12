@@ -1851,7 +1851,9 @@ def printLogo():
     print()
 
 def main():
-    global args
+    global args, parser, config, path, logFilename, configFileName, jwt
+    global headDict, paylDict, sig, contents, paylB64, newContents
+
     parser = argparse.ArgumentParser(epilog="If you don't have a token, try this one:\neyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbiI6InRpY2FycGkifQ.bsSwqj2c2uI9n7-ajmi3ixVGhPUiY7jO9SUn9dm15Po", formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("jwt", nargs='?', type=str,
                         help="the JWT to tinker with (no need to specify if in header/cookies)")
@@ -2226,5 +2228,6 @@ def main():
     runActions()
     exit(1)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
